@@ -1,13 +1,13 @@
 # BOOKSHELF API
 
-Multi Tenant API is a backend service built with Go, using the Echo framework, designed to manage tenant data and integrate with RabbitMQ for message handling. The API allows you to create and delete tenants, producers send rabbitMQ queues, consume messages from RabbitMQ queues, and provides logging with logrus.
+**Bookshelf API** is a backend service built with Node.js using the Hapi framework. This API allows you to manage books, providing functionality to create, read, update, and delete book records.
 
 ## Features
 
-- **Create**: Create Book.
-- **Read**: View Books.
-- **Update**: Update Book.
-- **Delete**: Delete Book.
+- **Create**: Add a new book.
+- **Read**: Retrieve book information.
+- **Update**: Modify existing book details.
+- **Delete**: Remove a book from the database.
 
 ## Requirements
 

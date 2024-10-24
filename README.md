@@ -24,87 +24,29 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/jatis_mobile_api.git
-   cd jatis_mobile_api
+   git clone https://github.com/yourusername/bookshelf_api.git
+   cd bookshelf_api
    ```
-2. Set up your Go environment::
+2. Set up project:
    ```bash
-   go mod tidy
+   npm install
    ```
-3. Create a config.yaml file in the root directory with the following structure:
-    ```yaml
-    RabbitMQURL: "amqp://guest:guest@localhost:5672/"
-    PostgresURL: "postgres://username:password@localhost:5432/database_name"
-    PORT: 8080
-    ```
 
 ## Running the Application
 
-1. Make sure your PostgreSQL and RabbitMQ services are running.
+1. Make sure your books.json is empty.
 2. Run the application:
     ```bash
-    go run main.go
+    npm run start-dev
+    ``` 
+    or 
+    ```bash 
+    npm start
     ```
-3. The server will start on the configured port (default: 8080).
+3. The server will start on the configured port (default: 9000).
 
 ## API Endpoints
-
-### Create Tenant
-
-- **POST** `/tenants`
-
-**Request Body**:
-```json
-{
-    "name": "Tenant Name"
-}
-```
-
-### Response for Create Tenant
-
-- **201 Created**: When the tenant is successfully created.
-- **409 Conflict**: If the tenant already exists.
-
-### Delete Tenant
-
-- **DELETE** `/tenants/{id}`
-
-**Response**:
-- **200 OK**: When the tenant is successfully deleted.
-- **400 Bad Request**: If the tenant ID is invalid.
-
-### Consumer
-
-- **GET** `/consumers`
-
-**Headers**:
-- `x-tenant-name: "Tenant Name"`
-
-**Response**:
-- **200 OK**: When the consumer is successfully started.
-
-### Producer
-
-- **POST** `/producers`
-
-**Headers**:
-- `x-tenant-name: "Tenant Name"`
-
-**Request Body**:
-```json
-{
-    "message": "Message for Tenant"
-}
-```
-
-**Response**:
-- **200 OK**: When the consumer is successfully started.
-
-## Performance Monitoring
-Middleware is included to log request performance metrics (duration, method, path).
-
-## Logging
-The application uses logrus for logging. Logs are written to app.log. The logging level can be adjusted as needed.
+Example Postman Collection : in project and name folder BookshelfAPITestCollectionAndEnvironment
 
 ## Contributing
 Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
